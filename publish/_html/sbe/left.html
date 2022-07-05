@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>부산은행 기업금융 비대면 채널 개선</title>
+	
+<link rel="stylesheet" href="../../resources/css/sbe/reset.css">
+<link rel="stylesheet" href="../../resources/css/sbe/fonts.css">
+
+<script type="text/javascript" src="../../resources/js/sbe/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+var parentDom = window.parent.document;
+var bodyIframe = $('.body iframe', parentDom);
+
+$.fn.setSnbMenu = function (idx) {
+	var _lnbWrap = $('#loIndexLeft');
+	var _lnbLink = $('a', _lnbWrap);
+
+	var _foldFnc = function(target, event) {
+		var _ul = target.closest('ul');
+		var _li = $('> li', _ul);
+
+		if(target.next().length > 0 && target.next().is(':hidden')) {
+			_li.removeClass('active');
+			target.parent().addClass('active');
+			$('> ul', _li).slideUp();
+			target.next().slideDown();
+		}
+	}
+
+	_lnbLink.bind('click', function(e) {
+		e.preventDefault();
+		var _this = $(this);
+
+		if(_this.attr('href').indexOf('.html') != '-1') {
+			bodyIframe.attr('src', _this.attr('href'));
+		}else{
+			_foldFnc(_this, e);
+		}
+	});
+
+	_foldFnc($('> ul > li', _lnbWrap).eq(idx).find('> a'));
+};
+
+$.fn.pageInit = function () {
+	//$('body').setLayout();
+	$('#loIndexLeft').setSnbMenu(2);//1depth 인덱스값
+};
+
+$(function () {
+	$('html').pageInit();
+});
+
+</script>
+
+<style type="text/css">
+html {overflow-y:auto;}
+/* body {width:199px;min-width:199px; font: normal .75em/1.2 '돋움', dotum, sans-serif; } */
+ 
+/* header */
+#loIndexHeader { width: 100%; height: 48px; border-bottom: 2px solid #3fa0ef; text-align:center;}
+#loIndexHeader img { margin-top: 10px; }
+ 
+/* snb */
+#loIndexLeft {font-size:12px;line-height:normal;}
+#loIndexLeft > ul {margin:0;padding:0;list-style:none;text-align:left;border:none;}
+#loIndexLeft li {position:relative;margin:0;vertical-align:top;*zoom:1;border-right:none;}
+#loIndexLeft li a {display:block;position:relative;padding:8px 10px;color:#666;font-weight:bold;text-decoration:none;background:#fff;border-bottom:1px solid #c2c2c2; *zoom:1}
+#loIndexLeft li a .i {position:absolute;top:50%;left:100%;width:8px;height:8px;margin:-4px 0 0 -16px;color:#ccc; text-indent:-2000px; }
+#loIndexLeft li ul {padding:0;background:#fff;display:none;border-top:none;}
+#loIndexLeft li li {margin:0;border:none;}
+#loIndexLeft li a.bg {background:#d9d9d9; color:#000; border-right:1px solid #c2c2c2;}
+#loIndexLeft li a.bg3 {background: none repeat scroll 0 0 #E62E87; color: #fff;}
+#loIndexLeft li a.bg4 {background: none repeat scroll 0 0 #9d383d; color: #fff;}
+#loIndexLeft li a.bg5 {background: none repeat scroll 0 0 #a3908e; color: #fff;}
+#loIndexLeft li a.bg6 {background: none repeat scroll 0 0 #bf2830; color: #fff;}
+#loIndexLeft li a.bg_old {background:#9d383d; color:#fff;border-top:1px solid #c2c2c2;border-right:1px solid #c2c2c2;}
+#loIndexLeft li li a {padding:8px 10px;border:none;background:#fff;font-weight:normal}
+#loIndexLeft li li a span {color:#666}
+#loIndexLeft li.active {z-index:2;width:100%;}
+#loIndexLeft li li.active {border:none}
+#loIndexLeft li > ul > li > a { border-top:1px dashed #dcdcdc;  }
+#loIndexLeft li > ul > li.active > a { background:#efefef; }
+#loIndexLeft li > ul > li.active > ul > li > a { background:none; border:none; width:auto; }
+#loIndexLeft li > ul > li.active > ul > li.active > a { font-weight:bold; }
+#loIndexLeft li > ul > li > ul > li > a { border:none; }
+#loIndexLeft li > ul > li:first-child > a { border-top:none; }
+#loIndexLeft li.active .i {background-position:0 -44px}
+/*#loIndexLeft li.active li a {border:none}*/
+#loIndexLeft li.active > ul {border-bottom:1px solid #c2c2c2; overflow:hidden;}
+#loIndexLeft li.active > ul > li.active > ul { border:none; border-top: 1px dashed #dcdcdc; }
+#loIndexLeft li.active > ul.modifyList {border:1px solid #ffbccd;}
+#loIndexLeft li.active li.active a span {font-weight:bold;color:#bf2830;}
+#loIndexLeft li li li { padding-left: 15px; }
+#loIndexLeft li.active li.active li a span { font-size: 11px; color:#666;font-weight:normal;}
+#loIndexLeft li.active li.active li.active a span { font-weight:bold;}
+#loIndexLeft li a.bg2 {background:#646464; color:#fff; border-bottom: 1px solid #2d2d2d;}
+#loIndexLeft li a.bg3 {background:#cb2b11; color:#fff;}
+ 
+/* frame */ 
+#loFrmContent { border: none; float: left; }
+
+#loIndexLeft li.lounge.active a{background:thistle}
+ 
+/*color*/
+</style>
+
+</head>
+<body>
+	<div id="loIndexLeft" class="guide-snb-menu" style="border-top:8px solid #ca2b11;">
+		<ul>
+			<li style="padding:20px 0;text-align:center;">
+				<span>
+					<a href="/_html/index.jsp" style="margin:0; padding:0; border:0;" target="_top">
+						부산은행 기업금융<br />비대면 채널 개선
+					</a>
+				</span>
+			</li>
+			<li>
+				<a href="#" class="bg2"><span>코딩가이드</span><span class="i">&gt;</span></a>
+				<ul>
+					<li><a href="#none" target="loFrmContent">기본</a>
+						<ul>
+							<li><a href="./guide/html_rule.html" target="loFrmContent">- HTML 작성 규칙</a></li>
+							<li><a href="./guide/css_rule.html" target="loFrmContent">- CSS 작성 규칙</a></li>
+							<li><a href="./guide/directory.html" target="loFrmContent">- Directory List</a></li>
+						</ul>
+					</li>
+					<li><a href="./guide/tab.html" target="loFrmContent">tab</a></li>
+					<li><a href="./guide/select.html" target="loFrmContent">select</a></li>
+					<li><a href="./guide/layer.html" target="loFrmContent">LAYER POPUP</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="bg"><span>컨텐츠 뷰</span></a>
+				<ul>
+					<li><a href="../../html/.html" target="loFrmContent">- 공통</a></li>
+				</ul>
+			</li>
+			<li><a href="/_html/index.jsp" target="_top">인터넷뱅킹 / 스마트뱅킹</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+

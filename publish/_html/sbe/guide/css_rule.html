@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes,width=device-width,height=device-height" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="320" />
+<meta name="format-detection" content="telephone = no" />
+<title>부산은행 기업금융 비대면 채널 개선</title>
+<link rel="stylesheet" href="../../../resources/css/sbe/reset.css">
+<link rel="stylesheet" href="../../../resources/css/sbe/fonts.css">
+<link rel="stylesheet" href="./css/guide.css">
+
+<script type="text/javascript" src="../../../resources/js/sbe/jquery-3.6.0.min.js"></script>
+
+<style>
+	.guide_box{margin-top:15px;}
+</style>
+</head>
+
+<body>
+
+	<div class="guide_wrap">
+		<h1 class="gd">CSS 작성 규칙</h1>
+		<!-- ul class="guide_list">
+			<li>본 페이지는 작업자용 축약 내용(참고 문서: DGN-FC-02-퍼블리싱표준정의서_첨부03.CSS작성규칙_v0.1.docx)</li>
+		</ul -->
+	
+		<h2 class="gd2">1. 기본</h2>
+		<ul class="guide_list">
+			<li>한개의 파일에서 CSS 파일을 @import로 추가 호출 한다.</li>
+			<li>모든 속성은 영문 소문자로만 작성</li>
+			<li>이미지 3배수 처리한다. (원사이즈/3)</li>
+			<li>폰트 : rem, 폰트관련 width, height 도 rem 을 사용한다</li>
+			<li>margin, padding, border, background 는 px로 사용한다</li>
+			<li>CSS의 주석은 시작만 작성</li>
+			<li>객체 구분을 위한 코드 그룹간 빈 한 줄 허용(한 줄만 허용)</li>
+			<li>컨텐츠 사이 간격을 위한 css("+" 선택자)는 파일내용 맨하단에 작성</li>
+		</ul>
+		<h2 class="gd2">3. CSS 작성 규칙</h2>
+		<table class="guide_tbl">
+			<caption></caption>
+			<colgroup><col width="50%">
+			<col width="*">
+			</colgroup><thead>
+			<tr>
+				<th>사용</th>
+				<th>미사용</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th colspan="2">따옴표(" ")사용 범위 : <span>폰트의 선언, 선택자, content에 사용한다. 그 외의 경우에 미사용</span></th>
+			</tr>
+			<tr>
+				<td>
+					.class_name {font-family:<i class="red">"</i>dotum<i class="red">"</i>;}<br>
+					.class_name:after{content:<i class="red">"</i>.<i class="red">"</i>;}<br>
+					[class^=<i class="red">"</i>name_<i class="red">"</i>]{ }
+				</td>
+				<td>.class_name{background:url(img.gif) no-repeat}</td>
+			</tr>
+			</tbody>
+		</table>
+		<table class="guide_tbl">
+			<caption></caption>
+			<colgroup><col width="50%">
+			<col width="*">
+			</colgroup><thead>
+			<tr>
+				<th>잘못된 예<i class="red">(X)</i></th>
+				<th>올바른 예<i class="red">(O)</i> + 예외</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th colspan="2">세미콜론(;) : <span>마지막 선언된 속성에도 세미콜론(;)을 사용</span></th>
+			</tr>
+			<tr>
+				<td>.class_name {margin-left:0;padding-left:10px}</td>
+				<td>.class_name{margin-left:0;padding-left:1rem<i class="red">;</i>}</td>
+			</tr>
+			<tr>
+				<th colspan="2">공백의 사용 : <span>선택자 간, 중괄호간 공백 미사용</span></th>
+			</tr>
+			<tr>
+				<td>.class_name{  margin-left:0;  padding-left:1rem;  }</td>
+				<td>.class_name{margin-left:0;padding-left:1rem;}</td>
+			</tr>
+			<tr>
+				<th colspan="2">들여쓰기, 줄바꿈  : <span>기본적으로 허용하지 않음, <i>예외)</i> 중복 선택자, CSS3 애니메이션 속성 나열시 사용</span></th>
+			</tr>
+			<tr>
+				<td>
+					.class_name,.class_name2{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;margin-left:0;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;padding-left:10px;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-webkit-transition:all 0.7s ease;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;transition:all 0.7s ease;<br>
+					}
+				</td>
+				<td>
+					.class_name,<i class="red">줄바꿈</i><br>
+					.class_name2{margin-left:0;padding-left:10px;<i class="red">줄바꿈</i><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-webkit-transition:all 0.7s ease;transition:all 0.7s ease;<i class="red">줄바꿈</i><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-webkit-transform:translateZ(0);transform:translateZ(0);<br>
+					}
+	
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<h2 class="gd2">4. 속성의 선언 순서</h2>
+		<table class="guide_tbl">
+			<caption></caption>
+			<colgroup><col width="7%">
+			<col width="35%">
+			<col width="7%">
+			<col width="*">
+			</colgroup><thead>
+			<tr>
+				<th>순서</th>
+				<th>속성</th>
+				<th>순서</th>
+				<th>속성</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th class="align_ct">1</th>
+				<td>display</td>
+				<th class="align_ct">8</th>
+				<td>margin</td>
+			</tr>
+			<tr>
+				<th class="align_ct">2</th>
+				<td>visibility</td>
+				<th class="align_ct">9</th>
+				<td>padding</td>
+			</tr>
+			<tr>
+				<th class="align_ct">3</th>
+				<td>overflow</td>
+				<th class="align_ct">10</th>
+				<td>border</td>
+			</tr>
+			<tr>
+				<th class="align_ct">4</th>
+				<td>float</td>
+				<th class="align_ct">11</th>
+				<td>background(축약 속성 순서: img/ repeat/ 가로 정렬/ 세로 정렬)</td>
+			</tr>
+			<tr>
+				<th class="align_ct">5</th>
+				<td>position</td>
+				<th class="align_ct">12</th>
+				<td>color</td>
+			</tr>
+			<tr>
+				<th class="align_ct">6</th>
+				<td>width, max-width, min-width</td>
+				<th class="align_ct">13</th>
+				<td>font, letter-spacing, text-align, white-space</td>
+			</tr>
+			<tr>
+				<th class="align_ct">7</th>
+				<td>height, max-height, min-height</td>
+				<th class="align_ct">14</th>
+				<td>그 외 기타 속성</td>
+			</tr>
+			<tr>
+				<th class="align_ct">예외</th>
+				<td colspan="3">:after, :before의 속성 중 {content:’ ‘;}는 처음으로 선언</td>
+			</tr>
+			</tbody>
+		</table>
+		<h2 class="gd2">5. Class 명명 규칙</h2>
+		<ul class="guide_list">
+			<li>시작의 이름은 영문 소문자를 사용하며 2개 이상의 단어 조합 경우 언더스코어(_)로 구분</li>
+			<li>영문 소문자와 숫자만을 사용</li>
+			<li>클래스명 숫자 증가시 언더스코어(_) 미사용</li>
+			<li>단어 조합의 경우 3개를 초과하지 않는다.</li>
+			<li>단어의 극단적 축약 및 긴 단어는 지양한다.</li>
+			<li>각 폴더명으로 컨텐츠 영역 class 생성  ex) .ctg_폴더명(_확장가능)</li>
+		</ul>
+		<table class="guide_tbl">
+			<caption></caption>
+			<colgroup><col width="20%">
+			<col width="30%">
+			<col width="20%">
+			<col width="*">
+			</colgroup><thead>
+			<tr>
+				<th>분류</th>
+				<th>Class명</th>
+				<th>분류</th>
+				<th>Class명</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th>컨텐츠 그룹</th>
+				<td>cnt_wrap</td>
+				<th>영역지정</th>
+				<td>*_area</td>
+			</tr>
+			<tr>
+				<th>타이틀</th>
+				<td>tit_*, *_tit</td>
+				<th>박스구조</th>
+				<td>box_*, *_box</td>
+			</tr>
+			<tr>
+				<th>텍스트</th>
+				<td>txt_*, *_txt</td>
+				<th>목록구조</th>
+				<td>list_*, *_list</td>
+			</tr>
+			<tr>
+				<th>메뉴구조</th>
+				<td>nav_</td>
+				<th>상태-활성(기본 비활성)</th>
+				<td>on</td>
+			</tr>
+			<tr>
+				<th>탭메뉴</th>
+				<td>tab_</td>
+				<th>상태-선택불가</th>
+				<td>disable</td>
+			</tr>
+			<tr>
+				<th>버튼</th>
+				<td>btn_*</td>
+				<th>메시지</th>
+				<td>msg_*</td>
+			</tr>
+			<tr>
+				<th>이미지 영역</th>
+				<td>img_</td>
+				<th>테이블</th>
+				<td>tbl_</td>
+			</tr>
+			<tr>
+				<th>입력</th>
+				<td>inp_</td>
+				<th>정렬</th>
+				<td>align_ct, align_lf, align_rt</td>
+			</tr>
+			<tr>
+				<th>체크, 라디오박스</th>
+				<td>chk</td>
+				<th>Layer popup</th>
+				<td>layer_pop</td>
+			</tr>
+			<tr>
+				<th>셀렉트박스</th>
+				<td>selbx</td>
+				<th>Layer Alert</th>
+				<td>layer_alert</td>
+			</tr>
+			<tr>
+				<th>접근성 숨김(타이틀등)</th>
+				<td>hidden</td>
+				<th>Layer</th>
+				<td>layer_*</td>
+			</tr>
+			<tr>
+				<th>기타</th>
+				<td colspan="3">분류외 특성에 맞는 class명 생성하여 사용</td>
+			</tr>
+			<tr>
+				<th>타입 추가<br>(복수 클래스 사용)</th>
+				<td colspan="3">
+					- HTML : class=”list_dot type_none” <br>
+					- CSS : .list_dot.type_none /* 변형사항 주석처리(선택사항) */<br>
+					- 기본 형태에서 추가 변형 시 ‘type’ 클래스 사용<br>
+					- 기본 형태와 상이할 경우 새로운 class로 생성
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	
+	</div>
+		
+		
+
+</body>
+</html>

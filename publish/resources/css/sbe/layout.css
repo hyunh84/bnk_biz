@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+#wrap {position:relative;height:100%;min-height:100%;height:auto !important;}
+
+/*********************************************************************************************************
+	HEADER
+*********************************************************************************************************/
+#header {position:fixed;top:0;left:0;right:0;height:40px;background-color:#0ff;z-index:100;}
+#header .btn_gnb {position:absolute;right:20px;top:14px;}
+
+/*********************************************************************************************************
+	GNB
+*********************************************************************************************************/
+#gnbWrap {visibility:hidden;position:fixed;left:0;top:0;right:0;bottom:0;background-color:rgba(0, 0, 0, 0);z-index:110;}
+#gnbWrap .gnb_box {position:absolute;right:-100%;top:0;bottom:0;width:100%;background-color:#fff;}
+#gnbWrap .gnb_box .gnb_close {position:fixed;right:10px;top:10px;width:20px;height:20px;}
+#gnbWrap .gnb_box .gnb_close:before {display:block;content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;border-radius:5px;background-color:#000;transform:translate(-50%, -50%) rotate(45deg);transform-origin:50% 50%;}
+#gnbWrap .gnb_box .gnb_close:after {display:block;content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;border-radius:5px;background-color:#000;transform:translate(-50%, -50%) rotate(-45deg);transform-origin:50% 50%;}
+#gnbWrap.active {visibility:visible;background-color:rgba(0, 0, 0, .4);transition:background-color 1s ease;}
+#gnbWrap.active .gnb_box {right:0;transition:right 1s ease;}
+
+/*********************************************************************************************************
+	CONTAINER / CONTENTS
+*********************************************************************************************************/
+#container {padding:50px 0 0;}
+
+/*********************************************************************************************************
+	FOOTER
+*********************************************************************************************************/

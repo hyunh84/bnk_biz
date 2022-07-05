@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes,width=device-width,height=device-height" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="320" />
+<meta name="format-detection" content="telephone = no" />
+<title>부산은행 기업금융 비대면 채널 개선</title>
+<link rel="stylesheet" href="../../../resources/css/sbe/reset.css">
+<link rel="stylesheet" href="../../../resources/css/sbe/fonts.css">
+<link rel="stylesheet" href="./css/guide.css">
+
+<script type="text/javascript" src="../../../resources/js/sbe/jquery-3.6.0.min.js"></script>
+<style>
+	.guide_box{margin-top:15px;}
+</style>
+</head>
+
+<body>
+
+<div class="guide_wrap">
+	<h1 class="gd">HTML 작성 규칙</h1>
+	<!-- ul class="guide_list">
+		<li>본 페이지는 작업자용 축약 내용(참고 문서: DGN-FC-02-퍼블리싱표준정의서_첨부02.HTML작성규칙_v0.1.docx)</li>
+	</ul -->
+
+	<h2 class="gd2">1. 기본</h2>
+	<ul class="guide_list">
+		<li>파일 링크 경로 ‘<strong>상대경로</strong>’로 작업 <br>
+			-	모바일웹, 모바일앱(하이브리드앱) HTML 동일 사용 : 개발작업 웹/앱 별도<br>
+			-	모바일앱 페이지 기준으로 상대경로 작업<br>
+			&nbsp;&nbsp;CSS: ../../../resource/css/mwp/mweb.css<br>
+			&nbsp;&nbsp;JS: ../../../resource/js/mwp/<br>
+			&nbsp;&nbsp;Image: ../../../resource/img/mwp/
+		</li>
+		<!-- li>HTML5 문서형 선언 : &lt;!DOCTYPE html&gt;</li>
+		<li>작업 파일 인코딩 UTF-8 설정</li -->
+		<li>동일한 이름의 id는 문서에서 한번만 사용 가능</li>
+		<li>그룹간 객체 구분을 위한 빈줄 허용하지 않음(필요한 경우 1줄을 초과하지 않음)</li>
+		<li>종료 태그 필요 없는 엘리먼트:<xmp><br>,<col>,<hr>,<img>,<input>,<link>,<meta>...</xmp></li>
+		<li>특정 엘리먼트에 id, class, style의 선언 순서는 기본 애트리뷰트 지정 후 선언</li>
+		<li>콘텐츠 영역의 주석 표기는 선택 사항</li>
+	</ul>
+	<h2 class="gd2">2. 구조와 표현의 분리</h2>
+	<ul class="guide_list">
+		<li>테이블 셀의 경우 다양한 너비의 고정폭을 지닐 수 있으므로 예외의 경우를 허용</li>
+		<li>input[text] 엘리먼트의 경우 너비의 고정폭 지정 허용함</li>
+	</ul>
+	<h2 class="gd2">3. 엘리먼튼 필수 요소</h2>
+	<table class="guide_tbl">
+		<caption></caption>
+		<col width="15%">
+		<col width="15%">
+		<col width="17%">
+		<col width="*">
+		<thead>
+		<tr>
+			<th>엘리먼트 종류</th>
+			<th>속성</th>
+			<th>기본 값</th>
+			<th>비고</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>input 입력</th>
+			<td>type</td>
+			<td>text</td>
+			<td>password, email, number, tel, search, date</td>
+		</tr>
+		<tr>
+			<th rowspan="4">input 선택</th>
+			<td>type</td>
+			<td>radio<br>checkbox</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>빈 값(혹은 임시 값)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>id</td>
+			<td></td>
+			<td>label 이 지정된 경우 label 엘리먼트의 for 값과 동일한 id 를 명시</td>
+		</tr>
+		<tr>
+			<td>title</td>
+			<td></td>
+			<td>label 엘리먼트가 지정되지 않은 경우 title 작성</td>
+		</tr>
+		<tr>
+			<th>label</th>
+			<td>for</td>
+			<td></td>
+			<td>radio,checkbox의 id값과 동일한 이름으로 연결하며 명시적 사용을 권장</td>
+		</tr>
+		<tr>
+			<th>button</th>
+			<td>type</td>
+			<td>button</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th rowspan="2">textarea</th>
+			<td>cols</td>
+			<td></td>
+			<td>기본값 10 지정</td>
+		</tr>
+		<tr>
+			<td>rows</td>
+			<td></td>
+			<td>기본값 3 지정</td>
+		</tr>
+		<tr>
+			<th>select</th>
+			<td></td>
+			<td></td>
+			<td>디자인 적용 별도 마크업(Layer)</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<h2 class="gd2">4. 명명규칙</h2>
+	<ul class="guide_list">
+		<li>파일 ID 기준 작성 : SB, PSD 파일명 동일</li>
+	</ul>
+	<h2 class="gd2">5. 구조(Layout) id</h2>
+	<ul class="guide_list">
+		<li>#wrap : 페이지 전체 영역 그룹</li>
+		<li>#header : 최상단영역 그룹</li>
+		<li>#contents : 본문영역 그룹<br>
+			.ctg_폴더명 : 카테고리(폴더)별 컨텐츠영역 그룹
+		</li>
+		<li>#footer : 하단영역 그룹</li>
+	</ul>
+	<h2 class="gd2">6. HTML 작업 확인 범위</h2>
+	<ul class="guide_list">
+		<li>
+			작업이 완료된 HTML 파일 확인<br>
+			-	크롬 웹 브라우저<br>
+			-	안드로이드 기본 브라우저 <br>
+			-	아이폰 기본 브라우저<br>
+			-	각 디바이스 크롬 설치 확인<br>
+		</li>
+		<li>타 앱뷰의 기능 버튼 제어 불가(모바일웹)</li>
+	</ul>
+	<h2 class="gd2">7. 주석</h2>
+	<ul class="guide_list">
+		<li>개발전달 이후 수정사항 적용 시 수정된 날짜 및 내용으로 표기해 준다.</li>
+		<li>작성규칙 : &lt;!-- 수정일 수정(or 추가) : 수정내용  &gt;</li>
+		<li style="margin-top:20px;">한줄이 수정된 경우 :<br>
+<div class="guide_box">
+<xmp><h2 class="cnt_tit">타이틀</h2> <!-- 2018-07-24 수정 : 텍스트 --></xmp></div>
+		</li>
+		<li style="margin-top:20px;">두줄이상 수정된 경우 :
+<div class="guide_box">
+<xmp><!-- 2018-07-24 수정 : 텍스트 -->
+<div class="cnt_wrap">
+	<h2 class="cnt_tit">페이지타이틀</h2>
+</div>
+<!-- //2018-07-24 수정 : 텍스트 -->
+</xmp></div>
+		</li>
+	</ul>
+	
+	
+</div>
+	
+	
+
+</body>
+</html>

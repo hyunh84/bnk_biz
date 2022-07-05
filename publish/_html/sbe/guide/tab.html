@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user_scalable=no, viewport-fit=cover" />
+<title>부산은행 기업금융 비대면 채널 개선</title>
+
+<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/reset.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/layout.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/contents.css">
+
+<script type="text/javascript" src="../../../resources/js/sbe/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/sbe/ui_style.js"></script>
+</head>
+<body>
+
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<div class="header_inner">
+			<h1 class="logo">부산은행</h1>
+			<button type="button" class="btn_gnb" aria-haspopup="true" aria-controls="gnbWrap" aria-expanded="false">GNB MENU</button>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<nav id="gnbWrap" aria-hidden="true" aria-label="전체메뉴">
+		<div class="gnb_box">
+			<div class="gnb_list_box">
+				<ul>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+				</ul>
+			</div>
+			
+			<button type="button" class="gnb_close"><em class="blind">닫기</em></button>
+		</div>
+	</nav>
+
+	<!-- container -->
+	<div id="container">
+
+		<!-- contents -->
+		<div class="contents">
+
+			<div class="tab_list_wrap" tab-name="tabEx">
+				<div class="tab_list_inner">
+					<ul role="tablist">
+						<li class="tab_item active">
+							<button type="button" role="tab"><em>TAB01</em></button>
+						</li>
+						<li class="tab_item disabled">
+							<button type="button" role="tab"><em>TAB02</em></button>
+						</li>
+						<li class="tab_item">
+							<button type="button" role="tab"><em>TAB03</em></button>
+						</li>
+						<li class="tab_item">
+							<button type="button" role="tab"><em>TAB04</em></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tab_panel_wrap" tab-name="tabEx">
+		
+				<div role="tabpanel" class="tab_panel" style="background-color:orange;" tabindex="0">
+					button tab panel01
+				</div>
+				<div role="tabpanel" class="tab_panel" style="background-color:violet;" tabindex="0">
+					button tab panel02
+				</div>
+				<div role="tabpanel" class="tab_panel" style="background-color:burlywood;" tabindex="0">
+					button tab panel03
+				</div>
+				<div role="tabpanel" class="tab_panel" style="background-color:darkcyan;color:#fff;" tabindex="0">
+					button tab panel04
+				</div>
+
+			</div>
+		
+
+		</div>
+		<!-- //contents -->
+
+	</div>
+	<!-- //container -->
+	
+
+	<!-- footer -->
+	<footer id="footer">
+
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<script>
+
+var tabExFnc = new tabControlFn('[tab-name="tabEx"]', {
+	panelChangeAfter : function(idx, panelEl) {
+		// panel 변경 후 콜백 함수
+		// idx : 현재 활성화된 탭 인덱스 번호
+		// panelEl : 현재 활성화된 tabpanel 엘레멘트
+	}
+});
+
+</script>
+
+</body>
+</html>
