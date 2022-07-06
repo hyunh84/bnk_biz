@@ -14,7 +14,7 @@ var gnbOpenFn = function(clickEl) {
 	var	_accessbility01;
 	var _accessbility02;
 	
-	_btnOpen.attr('aria-expanded', true);
+	// _btnOpen.attr('aria-expanded', true);
 	_gnbWrap.attr('aria-hidden', false);
 	_gnbWrap.data('btn-gnb', clickEl);
 	_gnbWrap.prepend('<div class="AccessibilityHtml1" tabindex="0" aria-hidden="true"></div>');
@@ -64,7 +64,8 @@ var gnbCloseFn = function() {
 	_accessbility01.remove();
 	_accessbility02.remove();
 	_gnbWrap.attr('aria-hidden', true).removeClass('active');
-	_clickEl.focus().attr('aria-expanded', false);
+	// _clickEl.focus().attr('aria-expanded', false);
+	_clickEl.focus();
 	_gnbBox.removeAttr('tabindex');
 	_gnbWrap.removeData('btn-gnb');
 }
@@ -252,7 +253,7 @@ var layerOpenFn = function(target, clickEl) {
 	var _accessbility02;
 
 	$('body').addClass('isPop');
-	$(clickEl).attr('aria-expanded', true);
+	// $(clickEl).attr('aria-expanded', true);
 	_layerWrap.attr('aria-hidden', false).css({'visibility' : 'visible'});
 	_layerWrap.data('click-target', clickEl);
 	_layerWrap.data('scroll-pos', $(window).scrollTop());
@@ -304,5 +305,6 @@ var layerCloseFn = function(target) {
 	_layerWrap.removeData('click-target');
 	_layerBox.removeAttr('tabindex');
 	if(_layerWrap.hasClass('float_bottom')) _layerBox.slideUp();
-	$(_clickEl).focus().attr('aria-expanded', false);
+	// $(_clickEl).focus().attr('aria-expanded', false);
+	$(_clickEl).focus();
 }
