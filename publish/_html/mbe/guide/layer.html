@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user_scalable=no, viewport-fit=cover" />
 <title>부산은행 기업금융 비대면 채널 개선</title>
 
-<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/reset.css">
-<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/fonts.css">
-<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/layout.css">
-<link rel="stylesheet" type="text/css" href="../../../resources/css/sbe/contents.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/reset.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/layout.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/contents.css">
 
-<script type="text/javascript" src="../../../resources/js/sbe/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../../../resources/js/sbe/ui_style.js"></script>
+<script type="text/javascript" src="../../../resources/js/mbe/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/mbe/ui_style.js"></script>
+
+<link rel="stylesheet" href="./css/guide.css">
+
 </head>
 <body>
 
@@ -47,8 +50,94 @@
 	<div id="container">
 		<!-- contents -->
 		<div class="contents">
-			<!-- <div style="height:100px;"></div> -->
-			<button type="button" aria-haspopup="true" onclick="layerOpenFn('#exLayer01', this);">layer open ex01</button>
+
+			<div class="guide_wrap">
+				<h1 class="gd">레이어팝업 Guide</h1>
+				<ul class="guide_list">
+					<li>onclick 으로 사용한다.</li>
+					<li>레이어팝업 닫기 : onclick="layerOpenFn('#IDNAME');"</li>
+					<!-- li>컨텐츠 내 버튼에 팝업 닫기를 할때는 .fnLayClose 를 추가한다.<br>
+								ex) &lt;button class="btn_primary <strong>fnLayClose</strong>"&gt;확인&lt;/button&gt;
+							</li -->
+				</ul>
+
+				<h2 class="gd2">레이어팝업</h2>
+				<div class="guide_box">
+					<div class="style_area">
+						<!-- markup -->
+						<button type="button" class="btn_sample" aria-haspopup="true" onclick="layerOpenFn('#exLayer01', this);">기본 : onclick</button>
+						<!-- //markup -->
+					</div>
+					<div class="html_area">
+						<xmp>
+<button type="button" class="btn_sample" aria-haspopup="true" onclick="layerOpenFn('#exLayer01', this);">기본 : onclick</button>
+
+//레이어팝업
+<article class="layer_wrap" id="exLayer01" role="dialog" aria-hidden="true">
+	<div class="layer_box">
+		<div class="layer_header">
+			<h1 class="layer_title">layer_title</h1>
+		</div>
+		
+		<div class="layer_container">
+			<div class="layer_contents">
+				layer_contents<br />
+				layer_contents<br />
+				layer_contents<br />
+				layer_contents<br />
+				layer_contents
+			</div>
+		</div>
+		
+		<button type="button" class="layer_close"><em class="blind">닫기</em></button>
+	</div>
+</article>
+						</xmp>
+					</div>
+				</div>
+
+				<h2 class="gd2">툴팁</h2>
+				<div class="guide_box">
+					<div class="style_area">
+						<!-- markup -->
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="tip_info_box">
+							<button type="button" class="btn_tip_open" aria-haspopup="true" aria-expanded="false"><em class="blind">우대금리</em></button>
+							<div class="tip_conts_box" role="tooltip" aria-hidden="true">
+								<div class="tip_conts_case">
+									<ul>
+										<li>기본이름 기준이므로 우대이율은 별도 확인하시기 바랍니다.</li>
+										<li>가입시점의 적용금리에 따라 만기지급액은 변경 될 수 있습니다.</li>
+									</ul>
+								</div>
+								<span class="tip_tail" aria-hidden="true"></span>
+								<button type="button" class="btn_tip_close"><em class="blind">닫기</em></button>
+							</div>
+						</div>
+						<!-- //markup -->
+					</div>
+					<div class="html_area">
+<xmp>
+<div class="tip_info_box">
+	<button type="button" class="btn_tip_open" aria-haspopup="true" aria-expanded="false"><em class="blind">우대금리</em></button>
+	<div class="tip_conts_box" role="tooltip" aria-hidden="true">
+		<div class="tip_conts_case">
+			<ul>
+				<li>기본이름 기준이므로 우대이율은 별도 확인하시기 바랍니다.</li>
+				<li>가입시점의 적용금리에 따라 만기지급액은 변경 될 수 있습니다.</li>
+			</ul>
+		</div>
+		<span class="tip_tail" aria-hidden="true"></span>
+		<button type="button" class="btn_tip_close"><em class="blind">닫기</em></button>
+	</div>
+</div>
+</xmp>
+					</div>
+				</div>
+			</div>
+
+
+
 		</div>
 		<!-- //contents -->
 

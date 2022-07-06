@@ -26,10 +26,21 @@
 [class^="tab_panel_wrap"] .tab_panel {visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0;text-align:center;}
 [class^="tab_panel_wrap"] .tab_panel[aria-hidden="false"] {visibility:visible;overflow:visible;width:auto;height:300px;font-size:50px;line-height:300px;}
 
+/* 툴팁 */
+[class^="tip_info_box"] {display:inline-block;position:relative;font-size:0;line-height:0;}
+[class^="tip_info_box"].active {z-index:50;}
+[class^="tip_info_box"] .btn_tip_open {width:16px;height:16px;vertical-align:top;background:url('../../images/mbe/temp/ico-info_i.png') no-repeat center / contain;}
+[class^="tip_info_box"] [class^="tip_conts_box"] {display:none;position:absolute;bottom:calc(100% + 8px);box-sizing:border-box;width:100vw;padding:0 20px;}
+[class^="tip_info_box"] [class^="tip_conts_box"] [class^="tip_conts_case"] {position:relative;padding:10px;font-size:11px;line-height:18px;border:1px solid #d4d4d4;border-radius:10px;background-color:#fff;box-shadow:0 2px 5px rgb(0 0 0 / 12%);}
+[class^="tip_info_box"] [class^="tip_conts_box"] [class^="tip_tail"] {display:block;overflow:hidden;position:absolute;bottom:-5px;width:16px;height:6px;}
+[class^="tip_info_box"] [class^="tip_conts_box"] [class^="tip_tail"]:after {display:block;content:"";position:absolute;left:50%;bottom:2px;width:8px;height:8px;border-left:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;background-color:#fff;transform:translate(-50%, 0) rotate(-45deg);transform-origin:50% 50%;}
+[class^="tip_info_box"] [class^="tip_conts_box"] .btn_tip_close {position:absolute;right:30px;top:10px;width:15px;height:15px;}
+[class^="tip_info_box"] [class^="tip_conts_box"] .btn_tip_close:before {display:block;content:"x";font-size:10px;line-height:12px;}
+
 /*********************************************************************************************************
 	LAYER POPUP
 *********************************************************************************************************/
-[class^="layer_wrap"] {visibility:hidden;overflow:hidden;z-index:200;}
+[class^="layer_wrap"] {visibility:hidden;overflow:hidden;position:fixed;left:0;top:0;right:0;bottom:0;z-index:200;}
 [class^="layer_wrap"] .layer_mask {position:absolute;left:0;top:0;right:0;bottom:0;background-color:rgba(0, 0, 0, .4);}
 [class^="layer_wrap"] [class^="layer_box"] {position:absolute;left:50%;top:50%;background-color:#fff;transform:translate(-50%, -50%);}
 [class^="layer_wrap"] [class^="layer_box"] [class^="layer_header"] {padding:15px 10px;}

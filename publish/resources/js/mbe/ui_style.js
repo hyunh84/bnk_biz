@@ -243,6 +243,50 @@ var tabControlFn = function(target, options) {
 }
 
 /*********************************************************************************************************
+	TOOLTIP
+*********************************************************************************************************/
+$(document).on('click', '[class^="tip_info_box"] .btn_tip_open', function() {	
+	var _this = $(this);
+	var _tipWrap = _this.closest('[class^="tip_info_box"]');
+	var _tipConts = $('.tip_conts_box', _tipWrap);
+	var _tipTail = $('.tip_tail', _tipConts);
+	var _offsetX = _tipWrap.offset().left;
+
+	if(_tipConts.is(':hidden')) {
+		_this.attr('aria-expanded', true);
+		_tipWrap.addClass('active');
+		_tipConts.show().attr('aria-hidden', false).css({'left' : -(_offsetX)});
+		_tipTail.css({'left' : _offsetX})
+	}else{
+		_this.attr('aria-expanded', false);
+		_tipWrap.removeClass('active');
+		_tipConts.hide().attr('aria-hidden', true);
+	}
+});
+$(document).on('click', '[class^="tip_info_box"] .btn_tip_close', function() {	
+	var _this = $(this);
+	var _tipWrap = _this.closest('[class^="tip_info_box"]');
+	var _tipOpenBtn = $('.btn_tip_open', _tipWrap);
+	var _tipConts = $('.tip_conts_box', _tipWrap);
+
+	_tipOpenBtn.attr('aria-expanded', false);
+	_tipWrap.removeClass('active');
+	_tipConts.hide().attr('aria-hidden', true);
+});
+//툴팁 외부 요소 클릭시 툴팁 자동 닫힘
+$(document).on('click', function() {
+	var _tipWrap = $('[class^="tip_info_box"]');
+	var _tipBtn = $('.btn_tip_open', _tipWrap);
+	var _tipConts = $('.tip_conts_box', _tipWrap);
+	
+	_tipWrap.removeClass('active');
+	_tipBtn.attr('aria-expanded', false);
+	_tipConts.hide().attr('aria-hidden', true);
+});
+//툴팁 내부 요소 클릭시 툴팁 자동 닫힘 방지
+$(document).on('click', '[class^="tip_info_box"]', function(e) {e.stopPropagation();});
+
+/*********************************************************************************************************
 	LAYER POPUP
 *********************************************************************************************************/
 var layerOpenFn = function(target, clickEl) {
