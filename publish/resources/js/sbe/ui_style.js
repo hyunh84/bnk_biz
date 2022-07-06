@@ -81,7 +81,7 @@ $(document).on('click', '[class^="combo_list_wrap"] .combo_opt', function() {
 
 	_comboBtnEl.empty().append(_comboTitleClone);
 	_comboBtnEl.append(_comboTitleClone).append(_optElHtml);
-	_comboTitleClone.attr('aria-hidden', true)
+	_comboTitleClone.addClass('blind');
 
 	layerCloseFn(_comboLayer);
 });
