@@ -12,6 +12,9 @@
 
 <script type="text/javascript" src="../../../resources/js/mbe/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/js/mbe/ui_style.js"></script>
+
+<link rel="stylesheet" href="./css/guide.css">
+
 </head>
 <body>
 
@@ -45,76 +48,96 @@
 
 	<!-- container -->
 	<div id="container">
-
 		<!-- contents -->
 		<div class="contents">
 
-			<span class="inp_combo">
-				<button type="button" role="combobox" aria-haspopup="true" aria-labelledby="combobox01" onclick="layerOpenFn('#combobox01', this);">
-					<span class="combo_title" aria-hidden="true">출금계좌</span>
-				</button>
-			</span>
+			<div class="guide_wrap">
+				<h1 class="gd">selectbox Guide</h1>
+				<ul class="guide_list">
+					<!-- <li>onclick 으로 사용한다.</li>
+					<li>레이어팝업 닫기 : onclick="layerOpenFn('#IDNAME');"</li> -->
+					<!-- li>컨텐츠 내 버튼에 팝업 닫기를 할때는 .fnLayClose 를 추가한다.<br>
+								ex) &lt;button class="btn_primary <strong>fnLayClose</strong>"&gt;확인&lt;/button&gt;
+							</li -->
+				</ul>
 
-			<br />
-			<br />
+				<h2 class="gd2">레이어팝업</h2>
+				<div class="guide_box">
+					<div class="style_area">
+						<!-- markup -->
+						<span class="inp_combo">
+							<button type="button" role="combobox" aria-haspopup="true" aria-labelledby="combobox01" onclick="layerOpenFn('#combobox01', this);">
+								<span class="combo_title" aria-hidden="true">출금계좌</span>
+							</button>
+						</span>
+						<!-- //markup -->
+					</div>
+					<div class="html_area">
+						<xmp>
+<span class="inp_combo">
+	<button type="button" role="combobox" aria-haspopup="true" aria-labelledby="combobox01" onclick="layerOpenFn('#combobox01', this);">
+		<span class="combo_title" aria-hidden="true">출금계좌</span>
+	</button>
+</span>
 
-			<span class="inp_combo">
-				<button type="button" role="combobox" aria-haspopup="true" aria-labelledby="combobox02" onclick="layerOpenFn('#combobox02', this);">
-					<span class="combo_title" aria-hidden="true">출금계좌</span>
-				</button>
-			</span>
+<article class="layer_wrap float_bottom" id="combobox01" role="listBox" aria-hidden="true">
+	<div class="layer_box">
+
+		<div class="layer_container">
+			<div class="layer_contents">
+				<div class="combo_list_wrap">
+					<ul class="combo_list">
+						<li>
+							<button type="button" class="combo_opt">
+								<span>옵션01</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="combo_opt">
+								<span>옵션02</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="combo_opt">
+								<span>옵션03</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="combo_opt">
+								<span>옵션04</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="combo_opt">
+								<span>옵션05</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="combo_opt">
+								<span>옵션06</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- <button type="button" class="layer_close"><em class="blind">닫기</em></button> -->
+	</div>
+</article>
+						</xmp>
+					</div>
+				</div>
+
+			</div>
+
+
 
 		</div>
 		<!-- //contents -->
 
 		<!-- layer -->
 		<article class="layer_wrap float_bottom" id="combobox01" role="listBox" aria-hidden="true">
-			<div class="layer_box">
-
-				<div class="layer_container">
-					<div class="layer_contents">
-						<div class="combo_list_wrap">
-							<ul class="combo_list">
-								<li>
-									<button type="button" class="combo_opt">
-										<span>옵션01</span>
-									</button>
-								</li>
-								<li>
-									<button type="button" class="combo_opt">
-										<span>옵션02</span>
-									</button>
-								</li>
-								<li>
-									<button type="button" class="combo_opt">
-										<span>옵션03</span>
-									</button>
-								</li>
-								<li>
-									<button type="button" class="combo_opt">
-										<span>옵션04</span>
-									</button>
-								</li>
-								<li>
-									<button type="button" class="combo_opt">
-										<span>옵션05</span>
-									</button>
-								</li>
-								<li>
-									<button type="button" class="combo_opt">
-										<span>옵션06</span>
-									</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-				<!-- <button type="button" class="layer_close"><em class="blind">닫기</em></button> -->
-			</div>
-		</article>
-
-		<article class="layer_wrap float_bottom" id="combobox02" role="listBox" aria-hidden="true">
 			<div class="layer_box">
 
 				<div class="layer_container">
@@ -178,9 +201,6 @@
 	<!-- //footer -->
 </div>
 <!-- //wrap -->
-
-<script>
-</script>
 
 </body>
 </html>
