@@ -18,7 +18,7 @@ var bodyIframe = $('.body iframe', parentDom);
 $.fn.setSnbMenu = function (idx) {
 	var _lnbWrap = $('#loIndexLeft');
 	var _lnbLink = $('a', _lnbWrap);
-
+	var _isAnimate = false;
 	var _foldFnc = function(target, event) {
 		var _ul = target.closest('ul');
 		var _li = $('> li', _ul);
@@ -27,7 +27,14 @@ $.fn.setSnbMenu = function (idx) {
 			_li.removeClass('active');
 			target.parent().addClass('active');
 			$('> ul', _li).slideUp();
-			target.next().slideDown();
+			target.next().slideDown(600, function() {
+				_isAnimate = false;
+			});
+		}else if(target.next().length > 0 && !target.next().is(':hidden')){
+			_li.removeClass('active');			
+			$('> ul', _li).slideUp(600, function() {
+				_isAnimate = false;
+			});
 		}
 	}
 
@@ -35,6 +42,8 @@ $.fn.setSnbMenu = function (idx) {
 		e.preventDefault();
 		var _this = $(this);
 
+		if(_isAnimate) return;
+		_isAnimate = true;
 		if(_this.attr('href').indexOf('.html') != '-1') {
 			bodyIframe.attr('src', _this.attr('href'));
 		}else{
