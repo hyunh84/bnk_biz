@@ -73,19 +73,19 @@ var gnbCloseFn = function() {
 /*********************************************************************************************************
 	COMBOBOX
 *********************************************************************************************************/
-$(document).on('click', '[class^="combo_list_wrap"] .combo_opt', function() {
-	var _this = $(this);
-	var _comboLayer = _this.closest('.layer_wrap');
-	var _comboBtnEl = $(_comboLayer.data('click-target'));
-	var _comboTitleClone = $('[class^="combo_title"]', _comboBtnEl).clone();
-	var _optElHtml = _this.html();
+// $(document).on('click', '[class^="combo_list_wrap"] .combo_opt', function() {
+// 	var _this = $(this);
+// 	var _comboLayer = _this.closest('.layer_wrap');
+// 	var _comboBtnEl = $(_comboLayer.data('click-target'));
+// 	var _comboTitleClone = $('[class^="combo_title"]', _comboBtnEl).clone();
+// 	var _optElHtml = _this.html();
 
-	_comboBtnEl.empty().append(_comboTitleClone);
-	_comboBtnEl.append(_comboTitleClone).append(_optElHtml);
-	_comboTitleClone.addClass('blind');
+// 	_comboBtnEl.empty().append(_comboTitleClone);
+// 	_comboBtnEl.append(_comboTitleClone).append(_optElHtml);
+// 	_comboTitleClone.addClass('blind');
 
-	layerCloseFn(_comboLayer);
-});
+// 	layerCloseFn(_comboLayer);
+// });
 
 /*********************************************************************************************************
 	TAB

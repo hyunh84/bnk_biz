@@ -12,6 +12,9 @@
 
 <script type="text/javascript" src="../../../resources/js/mbe/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/js/mbe/ui_style.js"></script>
+
+<link rel="stylesheet" href="./css/guide.css">
+
 </head>
 <body>
 
@@ -45,46 +48,116 @@
 
 	<!-- container -->
 	<div id="container">
-
 		<!-- contents -->
 		<div class="contents">
 
-			<div class="tab_list_wrap" tab-name="tabEx">
-				<div class="tab_list_inner">
-					<ul role="tablist">
-						<li class="tab_item">
-							<button type="button" role="tab"><em>TAB01</em></button>
-						</li>
-						<li class="tab_item disabled">
-							<button type="button" role="tab"><em>TAB02</em></button>
-						</li>
-						<li class="tab_item active">
-							<button type="button" role="tab"><em>TAB03</em></button>
-						</li>
-						<li class="tab_item">
-							<button type="button" role="tab"><em>TAB04</em></button>
-						</li>
-					</ul>
+			<div class="guide_wrap">
+				<h1 class="gd">TAB Guide</h1>
+				<ul class="guide_list">
+					<!-- <li>onclick 으로 사용한다.</li>
+					<li>레이어팝업 닫기 : onclick="layerOpenFn('#IDNAME');"</li> -->
+					<!-- li>컨텐츠 내 버튼에 팝업 닫기를 할때는 .fnLayClose 를 추가한다.<br>
+								ex) &lt;button class="btn_primary <strong>fnLayClose</strong>"&gt;확인&lt;/button&gt;
+							</li -->
+				</ul>
+
+				<h2 class="gd2">TAB</h2>
+				<div class="guide_box">
+					<div class="style_area">
+						<!-- markup -->
+						<div class="tab_list_wrap" tab-name="tabEx">
+							<div class="tab_list_inner">
+								<ul role="tablist">
+									<li class="tab_item">
+										<button type="button" role="tab"><em>TAB01</em></button>
+									</li>
+									<li class="tab_item disabled">
+										<button type="button" role="tab"><em>TAB02</em></button>
+									</li>
+									<li class="tab_item active">
+										<button type="button" role="tab"><em>TAB03</em></button>
+									</li>
+									<li class="tab_item">
+										<button type="button" role="tab"><em>TAB04</em></button>
+									</li>
+								</ul>
+							</div>
+						</div>
+			
+						<div class="tab_panel_wrap" tab-name="tabEx">
+					
+							<div role="tabpanel" class="tab_panel" style="background-color:orange;" tabindex="0">
+								button tab panel01
+							</div>
+							<div role="tabpanel" class="tab_panel" style="background-color:violet;" tabindex="0">
+								button tab panel02
+							</div>
+							<div role="tabpanel" class="tab_panel" style="background-color:burlywood;" tabindex="0">
+								button tab panel03
+							</div>
+							<div role="tabpanel" class="tab_panel" style="background-color:darkcyan;color:#fff;" tabindex="0">
+								button tab panel04
+							</div>
+			
+						</div>
+						<!-- //markup -->
+					</div>
+					<div class="html_area">
+						<xmp>
+<div class="tab_list_wrap" tab-name="tabEx">
+	<div class="tab_list_inner">
+		<ul role="tablist">
+			<li class="tab_item">
+				<button type="button" role="tab"><em>TAB01</em></button>
+			</li>
+			<li class="tab_item disabled">
+				<button type="button" role="tab"><em>TAB02</em></button>
+			</li>
+			<li class="tab_item active">
+				<button type="button" role="tab"><em>TAB03</em></button>
+			</li>
+			<li class="tab_item">
+				<button type="button" role="tab"><em>TAB04</em></button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="tab_panel_wrap" tab-name="tabEx">
+
+	<div role="tabpanel" class="tab_panel" style="background-color:orange;">
+		button tab panel01
+	</div>
+	<div role="tabpanel" class="tab_panel" style="background-color:violet;">
+		button tab panel02
+	</div>
+	<div role="tabpanel" class="tab_panel" style="background-color:burlywood;">
+		button tab panel03
+	</div>
+	<div role="tabpanel" class="tab_panel" style="background-color:darkcyan;color:#fff;">
+		button tab panel04
+	</div>
+
+</div>
+
+<script>
+
+	var tabExFnc = new tabControlFn('[tab-name="tabEx"]', {
+		panelChangeAfter : function(idx, panelEl) {
+			// tabpanel 변경 후 콜백 함수
+			// idx : 현재 활성화된 탭 인덱스 번호
+			// panelEl : 현재 활성화된 tabpanel 엘레멘트
+		}
+	});
+	
+</script>
+						</xmp>
+					</div>
 				</div>
+
 			</div>
 
-			<div class="tab_panel_wrap" tab-name="tabEx">
-		
-				<div role="tabpanel" class="tab_panel" style="background-color:orange;" tabindex="0">
-					button tab panel01
-				</div>
-				<div role="tabpanel" class="tab_panel" style="background-color:violet;" tabindex="0">
-					button tab panel02
-				</div>
-				<div role="tabpanel" class="tab_panel" style="background-color:burlywood;" tabindex="0">
-					button tab panel03
-				</div>
-				<div role="tabpanel" class="tab_panel" style="background-color:darkcyan;color:#fff;" tabindex="0">
-					button tab panel04
-				</div>
 
-			</div>
-		
 
 		</div>
 		<!-- //contents -->
@@ -103,14 +176,14 @@
 
 <script>
 
-var tabExFnc = new tabControlFn('[tab-name="tabEx"]', {
-	panelChangeAfter : function(idx, panelEl) {
-		// panel 변경 후 콜백 함수
-		// idx : 현재 활성화된 탭 인덱스 번호
-		// panelEl : 현재 활성화된 tabpanel 엘레멘트
-	}
-});
-
+	var tabExFnc = new tabControlFn('[tab-name="tabEx"]', {
+		panelChangeAfter : function(idx, panelEl) {
+			// tabpanel 변경 후 콜백 함수
+			// idx : 현재 활성화된 탭 인덱스 번호
+			// panelEl : 현재 활성화된 tabpanel 엘레멘트
+		}
+	});
+	
 </script>
 
 </body>
