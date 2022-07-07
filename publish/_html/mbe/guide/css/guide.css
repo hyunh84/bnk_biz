@@ -85,7 +85,7 @@ td.d_on { color:#f04f4f; font-weight:bold; }
 .service-con a:active{color:red;}
 
 
-.guide_wrap {padding:0;line-height:2rem;}
+.guide_wrap {padding:0;}
 .guide_wrap h1.gd {border-bottom:0.1rem solid #d9d9d9; padding-bottom:1rem; font-size:2rem; font-weight:bold;}
 .guide_wrap h2.gd2 {padding-bottom:0.5rem; padding-top:2rem; font-size:1.6rem; font-weight:bold;}
 .guide_wrap xmp{display:inline-block;margin:0;font-family:'NotoSans';font-size:13px;line-height:20px;}

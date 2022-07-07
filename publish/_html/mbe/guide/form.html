@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user_scalable=no, viewport-fit=cover" />
+<title>부산은행 기업금융 비대면 채널 개선</title>
+
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/reset.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/layout.css">
+<link rel="stylesheet" type="text/css" href="../../../resources/css/mbe/contents.css">
+
+<script type="text/javascript" src="../../../resources/js/mbe/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/mbe/ui_style.js"></script>
+
+<link rel="stylesheet" href="./css/guide.css">
+
+</head>
+<body>
+
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<div class="header_inner">
+			<h1 class="logo">부산은행</h1>
+			<button type="button" class="btn_gnb" aria-haspopup="true" aria-controls="gnbWrap">GNB MENU</button>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<nav id="gnbWrap" aria-hidden="true" aria-label="전체메뉴">
+		<div class="gnb_box">
+			<div class="gnb_list_box">
+				<ul>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+					<li><a href="#">GNB MENU</a></li>
+				</ul>
+			</div>
+			
+			<button type="button" class="gnb_close"><em class="blind">닫기</em></button>
+		</div>
+	</nav>
+
+	<!-- container -->
+	<div id="container">
+		<!-- contents -->
+		<div class="contents">
+
+			<div class="guide_wrap">
+				<h1 class="gd">FORM Guide</h1>
+				<ul class="guide_list">
+					<!-- <li>onclick 으로 사용한다.</li>
+					<li>레이어팝업 닫기 : onclick="layerOpenFn('#IDNAME');"</li> -->
+					<!-- li>컨텐츠 내 버튼에 팝업 닫기를 할때는 .fnLayClose 를 추가한다.<br>
+								ex) &lt;button class="btn_primary <strong>fnLayClose</strong>"&gt;확인&lt;/button&gt;
+							</li -->
+				</ul>
+
+				<h2 class="gd2">CHECKBOX</h2>
+				<div class="guide_box">
+					<div class="style_area">
+						<!-- markup -->
+						<span class="inp_check">
+							<input type="checkbox" id="chk01" />
+							<span  class="ico_check" aria-hidden="true"></span>
+							<label for="chk01">체크박스</label>
+						</span>
+						<!-- //markup -->
+					</div>
+					<div class="html_area">
+						<xmp>
+<span class="inp_check">
+	<input type="checkbox" id="chk01" />
+	<span  class="ico_check" aria-hidden="true"></span>
+	<label for="chk01">체크박스</label>
+</span>
+						</xmp>
+					</div>
+				</div>
+
+				<h2 class="gd2">RADIO</h2>
+				<div class="guide_box">
+					<div class="style_area">
+						<!-- markup -->
+						<span class="inp_radio">
+							<input type="radio" id="rdo01" name="rdo_group01" checked />
+							<span  class="ico_check" aria-hidden="true"></span>
+							<label for="rdo01">라디오박스1</label>
+						</span>
+						<span class="inp_radio">
+							<input type="radio" id="rdo02" name="rdo_group01" />
+							<span  class="ico_check" aria-hidden="true"></span>
+							<label for="rdo02">라디오박스2</label>
+						</span>
+						<span class="inp_radio">
+							<input type="radio" id="rdo03" name="rdo_group01" />
+							<span  class="ico_check" aria-hidden="true"></span>
+							<label for="rdo03">라디오박스3</label>
+						</span>
+						<!-- //markup -->
+					</div>
+					<div class="html_area">
+						<xmp>
+<span class="inp_radio">
+	<input type="radio" id="rdo01" name="rdo_group01" checked />
+	<span  class="ico_check" aria-hidden="true"></span>
+	<label for="rdo01">라디오박스1</label>
+</span>
+<span class="inp_radio">
+	<input type="radio" id="rdo02" name="rdo_group01" />
+	<span  class="ico_check" aria-hidden="true"></span>
+	<label for="rdo02">라디오박스2</label>
+</span>
+<span class="inp_radio">
+	<input type="radio" id="rdo03" name="rdo_group01" />
+	<span  class="ico_check" aria-hidden="true"></span>
+	<label for="rdo03">라디오박스3</label>
+</span>
+						</xmp>
+					</div>
+				</div>
+
+			</div>
+
+
+
+		</div>
+		<!-- //contents -->
+
+	</div>
+	<!-- //container -->
+	
+
+	<!-- footer -->
+	<footer id="footer">
+
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<script>
+
+	var tabExFnc = new tabControlFn('[tab-name="tabEx"]', {
+		panelChangeAfter : function(idx, panelEl) {
+			// tabpanel 변경 후 콜백 함수
+			// idx : 현재 활성화된 탭 인덱스 번호
+			// panelEl : 현재 활성화된 tabpanel 엘레멘트
+		}
+	});
+	
+</script>
+
+</body>
+</html>

@@ -4,6 +4,26 @@
 	common
 *********************************************************************************************************/
 
+/* checkbox */
+[class^="inp_check"] {display:inline-block;position:relative;}
+[class^="inp_check"] > input[type="checkbox"] {position:absolute;left:0;top:0;width:18px;height:18px;opacity:0;}
+[class^="inp_check"] .ico_check {min-height:18px;padding:0 0 0 18px;}
+[class^="inp_check"] .ico_check:before {display:block;content:"";position:absolute;left:0;top:0;box-sizing:border-box;width:18px;height:18px;border:1px solid #ddd;border-radius:100%;background:#fff url(../../images/mbe/temp/ico_checkbox_off.gif) no-repeat 4px 5px / 10px auto;}
+[class^="inp_check"] .ico_check:after {display:block;content:"";position:absolute;left:0;top:0;width:0;height:18px;box-sizing:border-box;background:url(../../images/mbe/temp/ico_checkbox_on.gif) no-repeat  4px 5px / 10px auto;}
+[class^="inp_check"] label {display:inline-block;padding:0 0 0 6px;line-height:18px;vertical-align:top;}
+[class^="inp_check"] > input[type="checkbox"]:checked + .ico_check:before {border:1px solid #cb2b11;background:#cb2b11;transition:border .5s ease, background .5s ease;}
+[class^="inp_check"] > input[type="checkbox"]:checked + .ico_check:after {width:18px;transition:width .5s ease;transition-delay:.2s;}
+
+/* radio */
+[class^="inp_radio"] {display:inline-block;position:relative;}
+[class^="inp_radio"] > input[type="radio"] {position:absolute;left:0;top:0;width:18px;height:18px;opacity:0;}
+[class^="inp_radio"] .ico_check {min-height:18px;padding:0 0 0 18px;}
+[class^="inp_radio"] .ico_check:before {display:block;content:"";position:absolute;left:0;top:0;box-sizing:border-box;width:18px;height:18px;border:1px solid #ddd;border-radius:100%;background:#fff url(../../images/mbe/temp/ico_checkbox_off.gif) no-repeat 4px 5px / 10px auto;}
+[class^="inp_radio"] .ico_check:after {display:block;content:"";position:absolute;left:0;top:0;width:0;height:18px;box-sizing:border-box;background:url(../../images/mbe/temp/ico_checkbox_on.gif) no-repeat  4px 5px / 10px auto;}
+[class^="inp_radio"] label {display:inline-block;padding:0 0 0 6px;line-height:18px;vertical-align:top;}
+[class^="inp_radio"] > input[type="radio"]:checked + .ico_check:before {border:1px solid #cb2b11;background:#cb2b11;transition:border .5s ease, background .5s ease;}
+[class^="inp_radio"] > input[type="radio"]:checked + .ico_check:after {width:18px;transition:width .5s ease;transition-delay:.2s;}
+
 /* select */
 [class^="inp_combo"] {display:inline-block;}
 [class^="inp_combo"] > button {display:block;overflow:hidden;text-align:left;}
@@ -15,7 +35,7 @@
 [class^="tab_list_wrap"]:first-child {margin:0;}
 [class^="tab_list_wrap"] .tab_list_inner {border-bottom:1px solid #000;}
 [class^="tab_list_wrap"] ul {display:flex;margin:0 0 -1px;}
-[class^="tab_list_wrap"] ul li {position:relative;margin:0 -1px 0 0;border-radius:10px 10px 0 0;border:1px solid #d5d5d5;border-bottom:1px solid #000;}
+[class^="tab_list_wrap"] ul li {position:relative;width:100%;margin:0 -1px 0 0;border-radius:10px 10px 0 0;border:1px solid #d5d5d5;border-bottom:1px solid #000;}
 [class^="tab_list_wrap"] ul li a,
 [class^="tab_list_wrap"] ul li button {display:block;box-sizing:border-box;width:100%;padding:10px;line-height:22px;font-size:14px;font-weight:600;color:#767676;text-align:center;border-radius:10px 10px 0 0;}
 [class^="tab_list_wrap"] ul li.active {border:1px solid rgb(82, 78, 78);border-bottom:1px solid #fff;z-index:1;}
