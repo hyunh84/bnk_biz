@@ -28,6 +28,21 @@
 [class^="inp_combo"] > button .combo_title {display:block;color:#777;}
 /* [class^="inp_combo"] > button .combo_title[aria-hidden="true"] {display:none;} */
 
+/* input -text */
+[class^="inp_txt"] {display:block;position:relative;box-sizing:border-box;}
+[class^="inp_txt"]:before {display:block;content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#ddd;}
+[class^="inp_txt"]:after {display:block;content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background-color:#ce371f;}
+[class^="inp_txt"] .inp_tit {display:block;visibility:hidden;overflow:hidden;height:0;}
+[class^="inp_txt"] input[type="text"],
+[class^="inp_txt"] input[type="tel"],
+[class^="inp_txt"] input[type="password"] {box-sizing:border-box;width:100%;padding:8px 0;font-size:24px;caret-color:#ce371f;border:none;outline:none;}
+[class^="inp_txt"] .btn_val_del {display:none;position:absolute;right:0;bottom:3px;width:20px;height:20px;background:url(../../images/mbe/temp/ico_del.gif) no-repeat center / 15px 15px;}
+[class^="inp_txt"].active:after {width:100%;transition:width .8s ease;}
+[class^="inp_txt"].active .inp_tit {visibility:visible;height:auto;transition:height .7s ease;}
+[class^="inp_txt"].set_val {padding:0 25px 0 0;}
+[class^="inp_txt"].set_val .btn_val_del {display:block;}
+
+
 /* tab */
 [class^="tab_list_wrap"] {margin:30px 0 0;}
 [class^="tab_list_wrap"]:first-child {margin:0;}

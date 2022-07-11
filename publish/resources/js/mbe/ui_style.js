@@ -71,6 +71,52 @@ var gnbCloseFn = function() {
 }
 
 /*********************************************************************************************************
+	input text
+*********************************************************************************************************/
+// Input Text, Search active
+$(document).on('focusin keyup change', '[class^="inp_txt"] input[type="text"], [class^="inp_txt"] input[type="tel"], [class^="inp_txt"] input[type="password"]', function() {
+	var _this = $(this);
+	var _val = _this.val();
+	var _inpBox = _this.closest('[class^="inp_txt"]');
+	var _btnDel = $('.btn_val_del', _inpBox);
+
+	_inpBox.addClass('active');
+	if(_val == '') {
+		_inpBox.removeClass('set_val');
+		_btnDel.attr('aria-hidden', true);
+	}else{
+		_inpBox.addClass('set_val');
+		_btnDel.attr('aria-hidden', false);
+	}
+});
+
+// Input Text Focus Out
+$(document).on('focusout', '[class^="inp_txt"] input[type="text"], [class^="inp_txt"] input[type="tel"], [class^="inp_txt"] input[type="password"]', function() {
+	var _this = $(this);
+	var _val = _this.val();
+	var _inpBox = _this.closest('[class^="inp_txt"]');
+	var _btnDel = $('.btn_val_del', _inpBox);
+	
+	_inpBox.removeClass('active');
+	if(_val == '') {
+		_inpBox.removeClass('set_val');
+		_btnDel.attr('aria-hidden', true);
+	}
+});
+
+// Input Text delete value
+$(document).on('click', '[class^="inp_txt"] .btn_val_del', function() {
+	var _this = $(this);
+	var _inpBox = _this.closest('[class^="inp_txt"]');
+	var _input = $('input[type="text"], input[type="tel"], input[type="password"]', _inpBox);
+	var _btnDel = $('.btn_val_del', _inpBox);
+
+	_input.val('');
+	_inpBox.removeClass('set_val');
+	_btnDel.attr('aria-hidden', true);
+});
+
+/*********************************************************************************************************
 	COMBOBOX
 *********************************************************************************************************/
 // $(document).on('click', '[class^="combo_list_wrap"] .combo_opt', function() {
